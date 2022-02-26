@@ -13,8 +13,10 @@
 	<version>1.0.0</version>
 	<name>springboot-file-upload-aws-s3</name>
 	<description>Spring Boot AWS S3 File Upload</description>
+	
 	<properties>
-		<java.version>8</java.version>
+    <maven.compiler.source>1.6</maven.compiler.source>
+    <maven.compiler.target>1.6</maven.compiler.target>
 	</properties>
 	
 	
@@ -120,21 +122,13 @@
     <version>3.0.0</version>
 </dependency>
   </dependencies>
-	   <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-            </plugin>
- 
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.1</version>
-                <configuration>
-                    <release>12</release>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>com.heroku.sdk</groupId>
+        <artifactId>heroku-maven-plugin</artifactId>
+        <version>3.0.3</version>
+      </plugin>
+    </plugins>
+  </build>
 </project>

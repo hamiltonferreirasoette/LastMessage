@@ -35,4 +35,5 @@ public class ContractCreateDTO {
 	public void setReceiver(ReceiverViewRequest receiver) {
 		this.receiver = receiver;
 	}
+	
 }

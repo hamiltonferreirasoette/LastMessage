@@ -7,6 +7,7 @@
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.5.3</version>
+
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>in.bushansirgur</groupId>
@@ -14,13 +15,7 @@
 	<version>1.0.0</version>
 	<name>springboot-file-upload-aws-s3</name>
 	<description>Spring Boot AWS S3 File Upload</description>
-
-	<properties>
-		<maven.compiler.source>1.6</maven.compiler.source>
-		<maven.compiler.target>1.6</maven.compiler.target>
-		<mainClass>fiap.App</mainClass>
-	</properties>
-
+	<packaging>jar</packaging>
 
 	<dependencies>
 
@@ -123,6 +118,19 @@
 			<artifactId>springfox-bean-validators</artifactId>
 			<version>3.0.0</version>
 		</dependency>
+
+		<dependency>
+			<groupId>io.awspring.cloud</groupId>
+			<artifactId>spring-cloud-aws-context</artifactId>
+			<version>2.3.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>io.awspring.cloud</groupId>
+			<artifactId>spring-cloud-aws-autoconfigure</artifactId>
+			<version>2.3.1</version>
+		</dependency>
+
 	</dependencies>
 	<build>
 

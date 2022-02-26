@@ -16,5 +16,4 @@ public class OwnerViewRequestMapper {
         o.setEmail(ownerViewRequest.getEmail());
         return o;
         }
-
 }

@@ -14,7 +14,7 @@ import fiap.owner.entity.OwnerEntity;
 import fiap.receiver.entity.ReceiverEntity;
 
 @Entity
-@Table(name = "TB_CONTRACT")
+@Table(name = "TB_CONTRACT_OWNER_RECEIVER")
 public class ContractEntity {
 
 	@Id

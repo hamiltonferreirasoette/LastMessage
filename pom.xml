@@ -18,6 +18,7 @@
 	<properties>
 		<maven.compiler.source>1.6</maven.compiler.source>
 		<maven.compiler.target>1.6</maven.compiler.target>
+		<mainClass>fiap.App</mainClass>
 	</properties>
 
 
@@ -129,7 +130,6 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.1</version>
 				<configuration>
 					<source>11</source>
 					<target>11</target>

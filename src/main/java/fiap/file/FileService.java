@@ -1,8 +1,8 @@
 package fiap.file;
 
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
-@Component
+@Service
 public interface FileService {
 
 		String uploadFile(MultipartFile file);

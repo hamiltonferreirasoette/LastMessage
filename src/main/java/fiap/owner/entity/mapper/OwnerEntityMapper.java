@@ -20,6 +20,8 @@ public class OwnerEntityMapper {
         o.setCpf(ownerEntity.getCpf());
         o.setCellphone(ownerEntity.getCellphone());
         o.setEmail(ownerEntity.getEmail());
+        o.setUsername(ownerEntity.getUsername());
+        o.setPassword(ownerEntity.getPassword());
 
         return o;
     }
@@ -33,6 +35,8 @@ public class OwnerEntityMapper {
         o.setCpf(ownerCreateDTO.getCpf());
         o.setCellphone(ownerCreateDTO.getCellphone());
         o.setEmail(ownerCreateDTO.getEmail());
+        o.setUsername(ownerCreateDTO.getUsername());
+        o.setPassword(ownerCreateDTO.getPassword());
 
         return o;
     }
@@ -44,6 +48,9 @@ public class OwnerEntityMapper {
         o.setId(ownerEntity.getId_owner());
         o.setName(ownerEntity.getName());
         o.setCpf(ownerEntity.getCpf()); 
+        o.setUsername(ownerEntity.getUsername());
+        o.setPassword(ownerEntity.getPassword());
+        
         return o;
 
 

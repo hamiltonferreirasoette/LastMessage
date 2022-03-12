@@ -35,10 +35,6 @@ public class ReceiverController {
 	@Autowired
 	private ReceiverViewResponseMapper receiverViewResponseMapper;
 	
-	
-	//hs
-//	@Autowired
-//	private AmqpService amqpService;
 
 	@PostMapping(path = "/api/receiver")
 	public ResponseEntity<ReceiverViewResponse> save(@RequestBody ReceiverViewRequest receiverViewRequest) throws Exception {
@@ -46,7 +42,6 @@ public class ReceiverController {
 		ReceiverCreatedDTO receiverCreatedDTO = receiverService.save(receiverCreateDTO);
 		ReceiverDTO receiverDTO = receiverService.findReceiver(receiverCreatedDTO.getId_receiver());		
 		ReceiverViewResponse receiverViewResponse = receiverViewResponseMapper.mapToReceiverViewResponse(receiverDTO);
-//		amqpService.sendToConsumer(pacienteViewResponse);
 		return ResponseEntity.status(HttpStatus.CREATED).body(receiverViewResponse);	
 	}
 
@@ -54,7 +49,6 @@ public class ReceiverController {
 	public ResponseEntity<ReceiverViewResponse> consultar(@PathVariable("id") Integer id) {
 		ReceiverDTO receiverDTO = receiverService.findReceiver(id);
 		ReceiverViewResponse receiverViewResponse = receiverViewResponseMapper.mapToReceiverViewResponse(receiverDTO);
-//		amqpService.sendToConsumer(pacienteViewResponse);
 		return ResponseEntity.ok(receiverViewResponse);
 	}
 

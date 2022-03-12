@@ -34,15 +34,6 @@ public class OwnerController {
 
 	@Autowired
 	private OwnerViewResponseMapper ownerViewResponseMapper;
-	
-
-//	@Autowired
-//	private AWSS3Service awsS3Service;
-	
-	
-	//hs
-//	@Autowired
-//	private AmqpService amqpService;
 
 	@PostMapping(path = "/api/owner")
 	public ResponseEntity<OwnerViewResponse> save(@RequestBody OwnerViewRequest ownerViewRequest) throws Exception {
@@ -50,7 +41,6 @@ public class OwnerController {
 		OwnerCreatedDTO ownerCreatedDTO = ownerService.save(ownerCreateDTO);
 		OwnerDTO ownerDTO = ownerService.findOwner(ownerCreatedDTO.getId());		
 		OwnerViewResponse ownerViewResponse = ownerViewResponseMapper.mapToOwnerViewResponse(ownerDTO);
-//		amqpService.sendToConsumer(pacienteViewResponse);
 		return ResponseEntity.status(HttpStatus.CREATED).body(ownerViewResponse);	
 	}
 
@@ -58,10 +48,9 @@ public class OwnerController {
 	public ResponseEntity<OwnerViewResponse> consultar(@PathVariable("id") Integer id) {
 		OwnerDTO ownerDTO = ownerService.findOwner(id);
 		OwnerViewResponse ownerViewResponse = ownerViewResponseMapper.mapToOwnerViewResponse(ownerDTO);
-//		amqpService.sendToConsumer(pacienteViewResponse);
 		return ResponseEntity.ok(ownerViewResponse);
 	}
-
+	
     @PutMapping(path = "/api/owner/{id}")
     public ResponseEntity<OwnerViewResponse> alterar(@RequestBody OwnerViewRequest owner,
                                                         @PathVariable("id") Integer id) {
@@ -86,19 +75,5 @@ public class OwnerController {
 		List<OwnerViewResponse> responseList = list.stream().map(ownerViewResponseMapper::mapToOwnerViewResponse)
 				.collect(Collectors.toList());
 		return ResponseEntity.ok(responseList);
-	}
-	
-	//
-	
-	
-//	@PostMapping(path = "/api/file")
-//	public ResponseEntity<Map<String, String>> uploadFile(@RequestParam("file") MultipartFile file) {
-//		String publicURL = awsS3Service.uploadFile(file);
-//		Map<String, String> response = new HashMap<>();
-//		response.put("publicURL", publicURL);
-//		return new ResponseEntity<Map<String, String>>(response, HttpStatus.CREATED);
-//	}
-	
-	
-	
+	}	
 }

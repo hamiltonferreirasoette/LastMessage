@@ -11,6 +11,8 @@ public class OwnerViewResponse {
 	private String cpf;
 	private String cellphone;
 	private String email;
+	private String username;
+	
 
 	public Integer getId_owner() {
 		return id_owner;
@@ -50,6 +52,14 @@ public class OwnerViewResponse {
 
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 }

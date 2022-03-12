@@ -22,4 +22,5 @@ import fiap.owner.entity.OwnerEntity;
 		@ManyToOne()
 		@JoinColumn(referencedColumnName = "id_owner")
 		private OwnerEntity owner;
+		
 }

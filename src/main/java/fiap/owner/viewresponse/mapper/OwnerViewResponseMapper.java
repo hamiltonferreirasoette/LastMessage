@@ -15,6 +15,7 @@ public class OwnerViewResponseMapper {
         o.setCpf(ownerDTO.getCpf());
         o.setCellphone(ownerDTO.getCellphone());
         o.setEmail(ownerDTO.getEmail());
+        o.setUsername(ownerDTO.getUsername());
         return o;
     }
     

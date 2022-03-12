@@ -35,19 +35,12 @@ public class ContractController {
 	@Autowired
 	private ContractViewResponseMapper contractViewResponseMapper;
 	
-	
-	//hs
-//	@Autowired
-//	private AmqpService amqpService;
-		
-	
 	@PostMapping(path = "/api/contract/add")
 	public ResponseEntity<ContractViewResponse> save(@RequestBody ContractViewRequest contractViewRequest) throws Exception {
 		ContractCreateDTO contractCreateDTO = contractViewRequestMapper.map(contractViewRequest);
 		ContractCreatedDTO contractCreatedDTO = contractService.saveContract(contractCreateDTO);
 		ContractDTO contractDTO = contractService.findContract(contractCreatedDTO.getContractId());		
 		ContractViewResponse contractViewResponse = contractViewResponseMapper.mapToContractViewResponse(contractDTO);
-//		amqpService.sendToConsumer(pacienteViewResponse);
 		return ResponseEntity.status(HttpStatus.CREATED).body(contractViewResponse);	
 	}
 	
